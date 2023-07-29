@@ -16,3 +16,7 @@ def contact(request):
         'email':'handiworkshub@gmail.com',
     }
     return render(request,'contact.html',details)
+def shoppingcart(request):
+    return render(request,'shoppingcart.html')
+def checkout(request):
+    return render(request,'checkout.html')
