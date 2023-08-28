@@ -3,5 +3,13 @@
 {% block title %}shop page{% endblock %}
 
 {% block content %}
-<h1>shop page</h1>
-{% endblock %}
+<h1 style="font-family: cursive;text-align: center;color: rgb(7, 155, 155);">Our Items</h1>
+<hr>
+
+{% for i in item_key %}
+<div class="mx-auto w-50 bg-info text-center text-white p-3 my-3 rounded" style="font-family: cursive;">
+    <h1>{{i.item_name}}</h1>
+    <p>{{i.items_description}}</p>
+</div>
+{% endfor %}
+{% endblock %} 

@@ -1,10 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import items,ceramics
 # Create your views here.
 def home(request):
     return render(request,'home.html')
 def shop(request):
-    return render(request,'shop.html')
+    item_dict={
+        'item_key':items.objects.all()
+    }
+    return render(request,'shop.html',item_dict)
 def pages(request):
     options={'opt':['shopping cart','checkout page']
         
@@ -20,3 +24,14 @@ def shoppingcart(request):
     return render(request,'shoppingcart.html')
 def checkout(request):
     return render(request,'checkout.html')
+def ceramic(request):
+    ceramic_dict={
+        'ceramic_key':ceramics.objects.all()
+    }
+    return render(request,'ceramic.html',ceramic_dict)
+def planter(request):
+    return render(request,'planter.html')
+def candle(request):
+    return render(request,'candle.html')
+def card(request):
+    return render(request,'card.html')

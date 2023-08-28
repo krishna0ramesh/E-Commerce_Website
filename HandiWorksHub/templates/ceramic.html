@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}ceramic{% endblock %}
+
+{% block content %}
+
+{% for c in ceramic_key %}
+<h1>{{c.ceramic_name}}</h1>
+{% endfor %}
+
+{% endblock %}
