@@ -11,5 +11,5 @@ urlpatterns = [
     path('planter/', views.planter,name='planter'),
     path('candle/', views.candle,name='candle'),
     path('card/', views.card,name='card'),
-    
+
 ]

@@ -8,5 +8,5 @@ admin.site.register(candles)
 admin.site.register(cards)
 
 class orderAdmin(admin.ModelAdmin):
-    list_display=('recipient','phno','email','item_name','uid','num','bookedOn')
+    list_display=('recipient','phno','email','item_name','uid','customize','num','bookedOn')
 admin.site.register(orders,orderAdmin)

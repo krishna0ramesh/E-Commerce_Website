@@ -31,5 +31,6 @@ class orders(models.Model):
     email=models.EmailField()
     item_name=models.ForeignKey(items,on_delete=models.CASCADE)
     uid=models.CharField(max_length=20)
+    customize=models.TextField(null=True)
     num=models.IntegerField()
     bookedOn=models.DateField(auto_now=True)

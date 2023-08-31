@@ -1,7 +1,10 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import items,ceramics,planters,candles,cards
 from .form import orderform
+
 # Create your views here.
 def home(request):
     return render(request,'home.html')
@@ -50,4 +53,3 @@ def card(request):
         'card_key':cards.objects.all()
     }
     return render(request,'card.html',card_dict)
-    
