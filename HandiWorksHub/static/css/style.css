@@ -1,13 +1,14 @@
-
 footer{
-        background-color: rgb(239, 203, 241);
-        height: 100px;
-        margin-top: 550px;
-        text-align: center;
-        padding-top: 30px;
-        font-family: cursive;
-        bottom: 0px;
-    }
+    background-color: rgb(239, 203, 241);
+    height: 100px;
+    margin-top: 100%;
+    margin-bottom:0px;
+    text-align: center;
+    padding-top: 30px;
+    font-family: cursive;
+    bottom: 0px;
+}
+
   
 .navbar-brand{
         font-family: cursive;
@@ -28,6 +29,5 @@ img{
     
 }
 
-.container1{
-    margin-left: 50px;
-}
+
+  

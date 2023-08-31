@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import items,ceramics
+from .models import items,ceramics,planters,candles,cards
+from .form import orderform
 # Create your views here.
 def home(request):
     return render(request,'home.html')
@@ -15,11 +16,16 @@ def pages(request):
              }
     return render(request,'pages.html',options)
 def contact(request):
-    details={
-        'number':987654321,
-        'email':'handiworkshub@gmail.com',
+    if request.method=='POST':
+        form=orderform(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request,'confirmation.html')
+    form=orderform()
+    dict_form={
+        'form':form
     }
-    return render(request,'contact.html',details)
+    return render(request,'contact.html',dict_form)
 def shoppingcart(request):
     return render(request,'shoppingcart.html')
 def checkout(request):
@@ -30,8 +36,18 @@ def ceramic(request):
     }
     return render(request,'ceramic.html',ceramic_dict)
 def planter(request):
-    return render(request,'planter.html')
+    planter_dict={
+        'planter_key':planters.objects.all()
+    }
+    return render(request,'planter.html',planter_dict)
 def candle(request):
-    return render(request,'candle.html')
+    candle_dict={
+        'candle_key':candles.objects.all()
+    }
+    return render(request,'candle.html',candle_dict)
 def card(request):
-    return render(request,'card.html')
+    card_dict={
+        'card_key':cards.objects.all()
+    }
+    return render(request,'card.html',card_dict)
+    

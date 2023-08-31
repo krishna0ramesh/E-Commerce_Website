@@ -1,9 +1,19 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {% block title %}contact page{% endblock %}
 
 {% block content %}
-<h1>contact:{{number}}</h1>
-<h1>email:{{email}}</h1>
+<h1 style="font-family: cursive;color: darkmagenta;"class='text-center'>Place your order here</h1>
+<hr>
+<div class="container text-center w-50 bg-light" >
+<hr>
+<form action="" method="POST">
+    {% csrf_token %}
+    
+    {{form|crispy}}
+    <button type="submit" class="btn btn-info">order</button>
+    <hr>
+</form>
+</div>
 {% endblock %}
     
